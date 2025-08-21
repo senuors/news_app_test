@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/category_model.dart';
 
@@ -19,14 +18,14 @@ class CustomCategoryWidget extends StatelessWidget {
             image: NetworkImage(category.imageURL),
             fit: BoxFit.cover,
           ),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(33),
           color: Colors.black,
         ),
         child: Center(
           child: Text(
             category.categoryName,
             style: TextStyle(
-              color: Colors.redAccent,
+              color: Colors.white,
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
