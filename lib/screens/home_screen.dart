@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/widgets/custom_category_widget.dart';
+import 'package:news_app/widgets/category_list_view.dart';
+import 'package:news_app/widgets/news_listtile.dart';
 
-import '../widgets/category_list_view.dart';
-import '../widgets/custom_news_tile.dart';
-import '../widgets/news_listtile.dart';
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String selectedCategory = 'general'; // الحالة الجديدة: التصنيف المحدد
+
+  void onCategorySelected(String categoryName) {
+    setState(() {
+      selectedCategory = categoryName;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +47,16 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            CategoryListView(),
+            CategoryListView(
+              onCategorySelected: onCategorySelected,
+            ), // تمرير الدالة
             SizedBox(height: 30),
-            Expanded(child: NewsListTile()),
+            Expanded(
+              child: NewsListTile(category: selectedCategory),
+            ), // تمرير التصنيف
           ],
         ),
       ),
-
-      //
     );
   }
 }
