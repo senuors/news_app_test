@@ -7,7 +7,7 @@ import 'custom_news_tile.dart';
 
 class NewsListTile extends StatefulWidget {
   final String category; // الخاصية الجديدة: التصنيف
-  NewsListTile({super.key, required this.category}); // تحديث المنشئ
+  const NewsListTile({super.key, required this.category}); // تحديث المنشئ
 
   @override
   State<NewsListTile> createState() => _NewsListTileState();
@@ -21,15 +21,6 @@ class _NewsListTileState extends State<NewsListTile> {
   void initState() {
     super.initState();
     getNews();
-  }
-
-  // إضافة didUpdateWidget للتعامل مع تغيير التصنيف
-  @override
-  void didUpdateWidget(covariant NewsListTile oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.category != oldWidget.category) {
-      getNews(); // إعادة جلب الأخبار إذا تغير التصنيف
-    }
   }
 
   Future<void> getNews() async {

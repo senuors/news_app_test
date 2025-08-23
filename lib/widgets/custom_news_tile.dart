@@ -16,7 +16,7 @@ class CustomNewsTile extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.amber,
-              borderRadius: BorderRadius.circular(44),
+              borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
                 image: NetworkImage(articleModel.imgURL),
                 fit: BoxFit.cover,

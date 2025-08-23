@@ -14,7 +14,6 @@ class CustomCategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // تغليف الـ Container بـ GestureDetector
       onTap: onTap, // استدعاء الدالة عند النقر
       child: Padding(
         padding: const EdgeInsets.only(right: 18.0),

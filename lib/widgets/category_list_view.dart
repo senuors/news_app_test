@@ -9,7 +9,7 @@ class CategoryListView extends StatelessWidget {
     required this.onCategorySelected,
   }); // الخاصية الجديدة
 
-  final void Function(String) onCategorySelected; // دالة Callback
+  final void Function(String) onCategorySelected;
 
   final List<CategoryModel> categories = [
     CategoryModel(

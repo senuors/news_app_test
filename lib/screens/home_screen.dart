@@ -47,9 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Column(
           children: [
-            CategoryListView(
-              onCategorySelected: onCategorySelected,
-            ), // تمرير الدالة
+            CategoryListView(onCategorySelected: onCategorySelected),
             SizedBox(height: 30),
             Expanded(
               child: NewsListTile(category: selectedCategory),
